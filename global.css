@@ -48,7 +48,7 @@ body::before {
     width: 120%;
     height: 120%;
     background: url("grupo.png") center/cover no-repeat;
-    opacity: 0.40;
+    opacity: 0.10;
     z-index: -1;
 
     /* parallax */
@@ -918,3 +918,4 @@ p {
         transform: translateY(0);
     }
 }
+
