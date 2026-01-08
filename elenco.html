@@ -45,9 +45,9 @@
 
 <section class="galeria"> 
 
-    <div class="imagem-container">
-        <a href="coloque a imagem aqui" class="lightbox">
-            <img src="Coloque a imagem aqui" alt="Coloque o nome do jogador aqui">
+    <div class="imagem-container reveal">
+        <a href="grupo.png" class="lightbox">
+            <img src="grupo.png" alt="Coloque o nome do jogador aqui">
         </a>
         <p>Coloque a descrição da foto aqui</p>
     </div>
@@ -64,6 +64,24 @@
         </a>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // impede de encolher novamente
+            }
+        });
+    }, { threshold: 0.2 });
+
+    items.forEach(item => observer.observe(item));
+});
+</script>
+
 
 <footer>
     &trade; Site criado pelo Cláudio para o time do Novo Esquema F.C.
